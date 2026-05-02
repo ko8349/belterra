@@ -1,22 +1,31 @@
 # Deployment Guide
 
-## Vercel
+## Local test
 
 ```bash
 npm install
-npm run build
+npm run dev
 ```
 
-Then upload/push to GitHub and import to Vercel.
+Open the local URL provided by Vite.
 
-## DNS
+## Production build
 
-Use Vercel's generated records for your GoDaddy domain.
+```bash
+npm run build
+npm run preview
+```
 
-## Recommended launch checks
+## Vercel deployment
 
-- Confirm final email address.
-- Confirm final WhatsApp number.
-- Add approved price list link if available.
-- Replace placeholder domain with final live domain.
-- Test mobile view before campaign launch.
+- Framework preset: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+
+## GoDaddy domain
+
+After deploying on Vercel:
+1. Add the domain in Vercel.
+2. Copy the DNS records provided by Vercel.
+3. Paste them into GoDaddy DNS settings.
+4. Wait for propagation.

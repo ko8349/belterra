@@ -2,7 +2,6 @@ export const contact = {
   phone: '+34 613 191 470',
   whatsapp: '34613191470',
   email: 'hello@belterraresidences.com',
-  website: 'www.belterraresidences.com',
   location: 'La Cala de Mijas, Mijas Costa, Costa del Sol'
 }
 
@@ -13,26 +12,26 @@ export const facts = [
   ['01–70', 'numbered plots']
 ]
 
-export const amenities = [
-  'Secure gated community',
-  'Individual video vigilance',
-  'Private gardens',
-  'Optional private pools',
-  'Community swimming pool',
-  'Community sauna',
-  'Shuttle bus',
-  'EV charging points',
-  'Remote appliance controls',
-  'Private parking'
+export const typologies = [
+  { type: 'Type 1', count: '16 units', label: 'Medianera', bedrooms: '3 bedrooms', badge: 'Most Popular', color: '#dca7d8', plan: 'type12' },
+  { type: 'Type 2', count: '6 units', label: 'Extremo', bedrooms: '3 bedrooms', badge: 'Limited Availability', color: '#c95fbd', plan: 'type12' },
+  { type: 'Type 3A', count: '20 units', label: 'Medianera', bedrooms: '3 bedrooms', badge: 'Smart Choice', color: '#dccb7d', plan: 'type34a' },
+  { type: 'Type 3B', count: '8 units', label: 'Medianeras pareadas', bedrooms: '3 bedrooms', badge: 'Family Favourite', color: '#9fb870', plan: 'type34b' },
+  { type: 'Type 4A', count: '7 units', label: 'Extremo', bedrooms: '4 bedrooms', badge: 'Upgrade Family Living', color: '#e2934e', plan: 'type34a' },
+  { type: 'Type 4B', count: '6 units', label: 'Esquina / corner', bedrooms: '4 bedrooms', badge: 'Premium Selection', color: '#78aa88', plan: 'type34b' },
+  { type: 'Type 5', count: '8 units', label: 'Medianera / extremo', bedrooms: '4 bedrooms', badge: 'Executive Family Home', color: '#94d4d5', plan: 'type5' },
+  { type: 'Type 6', count: '1 unit', label: 'Security / gatehouse', bedrooms: 'Access control home', badge: 'Exclusive One-Off', color: '#9b9add', plan: 'type6' }
 ]
 
-export const typologies = [
-  { name: 'Type 1', count: '16 units', label: 'Medianera', bedrooms: '3 bedrooms', accent: '#e7b3de' },
-  { name: 'Type 2', count: '6 units', label: 'Extremo', bedrooms: '3 bedrooms', accent: '#d86ed0' },
-  { name: 'Type 3A', count: '20 units', label: 'Medianera', bedrooms: '3 bedrooms', accent: '#d7c88c' },
-  { name: 'Type 3B', count: '8 units', label: 'Medianeras pareadas', bedrooms: '3 bedrooms', accent: '#b8c78f' },
-  { name: 'Type 4A', count: '7 units', label: 'Extremo', bedrooms: '4 bedrooms', accent: '#e58945' },
-  { name: 'Type 4B', count: '6 units', label: 'Esquina', bedrooms: '4 bedrooms', accent: '#88b576' },
-  { name: 'Type 5', count: '8 units', label: 'Medianera / Extremo', bedrooms: '3–4 bedrooms', accent: '#9bd7d8' },
-  { name: 'Type 6', count: '1 unit', label: 'Security / Gatehouse', bedrooms: 'Access control', accent: '#8da0e7' }
+export const amenities = [
+  'Gated community',
+  'Individual video vigilance',
+  'Private gardens',
+  'Private pools in select homes',
+  'Community swimming pool',
+  'Smart-home ready',
+  'EV charging points',
+  'Private parking',
+  'Community sauna',
+  'Shuttle bus'
 ]
