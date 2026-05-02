@@ -1,6 +1,6 @@
 {
-  "name": "belterra-authentic-web",
-  "version": "3.0.0",
+  "name": "belterra-residences-final-production",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
