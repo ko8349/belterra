@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck, Home, Leaf, Plug, Video, Waves, Car, Mail, Phone, MapPin, Menu, X, DoorOpen, Trees, LockKeyhole, Maximize2 } from 'lucide-react'
+import { ArrowRight, Phone, Mail, MapPin, ShieldCheck, Home, Waves, Plug, Video, Trees, Car } from 'lucide-react'
 import './styles.css'
-import approvedLogo from './assets/belterra-logo-approved.png'
+import logo from './assets/logo-approved.png'
 import img10 from './assets/renders/10.jpg'
 import img03 from './assets/renders/03.jpg'
 import img05 from './assets/renders/05.jpg'
@@ -23,302 +22,101 @@ import marbella4 from './assets/renders/marbella4.jpg'
 import marbella3 from './assets/renders/marbella3.jpg'
 import marbella2 from './assets/renders/marbella2.jpg'
 import marbella1 from './assets/renders/marbella1.jpg'
-import sourcemasterplan from './assets/layouts/source-masterplan.png'
-import sourcecommonzone from './assets/layouts/source-common-zone.png'
-import sourcetype6 from './assets/layouts/source-type-6.png'
-import sourcetype5 from './assets/layouts/source-type-5.png'
-import sourcetype34 from './assets/layouts/source-type-3-4.png'
-import sourcetype34b from './assets/layouts/source-type-3-4b.png'
-import sourcetype12 from './assets/layouts/source-type-1-2.png'
-import { contact, facts, homeTypes, amenities, blocks } from './data/content'
+import masterplanreal from './assets/layouts/masterplan-real.png'
+import types12real from './assets/layouts/types-1-2-real.png'
+import types3a4areal from './assets/layouts/types-3a-4a-real.png'
+import types3b4breal from './assets/layouts/types-3b-4b-real.png'
+import type5real from './assets/layouts/type-5-real.png'
+import type6real from './assets/layouts/type-6-real.png'
+import commonzonereal from './assets/layouts/common-zone-real.png'
+
+const contact = {
+  phone: '+34 613 191 470',
+  email: 'hello@belterraresidences.com',
+  whatsapp: '34613191470',
+  location: 'La Cala de Mijas, Mijas Costa'
+}
+
+const layouts = [
+  {src:masterplanreal, title:'Masterplan / 70 numbered plots'},
+  {src:types12real, title:'Vivienda Tipo 1 / 2'},
+  {src:types3a4areal, title:'Vivienda Tipo 3A / 4A'},
+  {src:types3b4breal, title:'Vivienda Tipo 3B / 4B'},
+  {src:type5real, title:'Vivienda Tipo 5'},
+  {src:type6real, title:'Vivienda Tipo 6 / Seguridad'},
+  {src:commonzonereal, title:'Zona común / piscina comunitaria'}
+]
 
 const renders = [
-  { src: img10, title: 'Evening arrival street' },
-  { src: img03, title: 'Family community street' },
-  { src: img05, title: 'Classic arrival frontage' },
-  { src: img60, title: 'Aerial urbanization render' },
-  { src: img50, title: 'Community pool lifestyle' },
-  { src: img13, title: 'Palm-lined residences' },
-  { src: img422, title: 'Private garden pool' },
-  { src: img45, title: 'Sunset private pool' },
-  { src: img14, title: 'Spa-inspired bathroom' },
-  { src: img16, title: 'Bedroom suite' },
-  { src: img08, title: 'Living room with pool view' },
-  { src: marbella1, title: 'Kitchen finish' },
-  { src: marbella2, title: 'Dining detail' },
-  { src: marbella8, title: 'Stair material detail' }
+  {src: img10, title:'Evening arrival street'},
+  {src: img03, title:'Family community street'},
+  {src: img50, title:'Community pool'},
+  {src: img422, title:'Private garden pool'},
+  {src: img08, title:'Living room'},
+  {src: marbella1, title:'Kitchen'},
+  {src: img16, title:'Bedroom'},
+  {src: img14, title:'Bathroom'}
 ]
 
-const sourcePlans = [
-  { src: sourcemasterplan, title: 'Original source masterplan' },
-  { src: sourcetype12, title: 'Original source plans: Type 1 / 2' },
-  { src: sourcetype34b, title: 'Original source plans: Type 3A / 4A' },
-  { src: sourcetype34, title: 'Original source plans: Type 3B / 4B' },
-  { src: sourcetype5, title: 'Original source plans: Type 5' },
-  { src: sourcetype6, title: 'Original source plan: Type 6' },
-  { src: sourcecommonzone, title: 'Original source common zone' }
-]
+function Header(){
+  return <header className="header">
+    <a href="#top" className="logoBox"><img src={logo} alt="Belterra Residences by Aventus"/></a>
+    <nav><a href="#project">Project</a><a href="#masterplan">Masterplan</a><a href="#homes">Homes</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+    <a className="headerCta" href={`mailto:${contact.email}?subject=Belterra%20Price%20List`}>Request Price List</a>
+  </header>
+}
 
-const fade = { hidden: { opacity: 0, y: 26 }, visible: { opacity: 1, y: 0 } }
-
-function BrandMark({ light = false }) {
-  return (
-    <div className={`brandMark ${light ? 'light' : ''}`}>
-      <div className="brandIcon" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
-      <div>
-        <strong>BELTERRA</strong>
-        <small>Residences by Aventus</small>
-      </div>
+function Hero(){
+  return <section id="top" className="hero">
+    <img src={img10} alt="Belterra hero"/>
+    <div className="shade"/>
+    <div className="heroContent">
+      <p className="eyebrow">Belterra Residences by Aventus</p>
+      <h1>Future-Ready Family Homes</h1>
+      <p>70 contemporary townhouses in La Cala de Mijas, built around secure community living, intelligent comfort and long-term value.</p>
+      <div className="actions"><a className="btn primary" href={`mailto:${contact.email}?subject=Belterra%20Price%20List`}>Request Price List <ArrowRight size={18}/></a><a className="btn ghost" href={`https://wa.me/${contact.whatsapp}`}>WhatsApp Sales</a></div>
     </div>
-  )
+    <div className="facts"><div><b>70</b><span>townhouses</span></div><div><b>3 & 4</b><span>bedroom homes</span></div><div><b>B1–B8</b><span>real blocks</span></div><div><b>01–70</b><span>numbered plots</span></div></div>
+  </section>
 }
 
-function Nav() {
-  const [open, setOpen] = useState(false)
-  const links = ['Project', 'Masterplan', 'Homes', 'Lifestyle', 'Gallery', 'Contact']
-  return (
-    <header className="nav">
-      <a href="#top" className="navBrand"><BrandMark /></a>
-      <nav>{links.map(l => <a key={l} href={`#${l.toLowerCase()}`}>{l}</a>)}</nav>
-      <a className="navCta" href={`mailto:${contact.email}?subject=Belterra%20Residences%20Price%20List`}>Request Price List</a>
-      <button className="hamb" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
-      {open && <div className="mobileMenu">{links.map(l => <a key={l} onClick={() => setOpen(false)} href={`#${l.toLowerCase()}`}>{l}</a>)}</div>}
-    </header>
-  )
+function Project(){
+ return <section id="project" className="section split">
+  <div><p className="kicker">Corrected version</p><h2>Approved logo. Real project plans. No fake redrawn layouts.</h2></div>
+  <div className="copy"><p>This version uses the actual Belterra logo image, scaled properly so it does not overflow or look messy.</p><p>The layouts are shown from your real architectural drawings in clean, brand-framed cards. Nothing is invented or simplified into inaccurate diagrams.</p></div>
+ </section>
 }
 
-function Hero() {
-  return (
-    <section id="top" className="hero">
-      <img src={img10} alt="Belterra Residences hero" />
-      <div className="heroShade" />
-      <motion.div className="heroText" initial="hidden" animate="visible" variants={fade} transition={{ duration: .75 }}>
-        <p className="eyebrow">La Cala de Mijas · Costa del Sol</p>
-        <h1>Future-Ready Family Homes</h1>
-        <p>70 contemporary townhouses built around secure community living, intelligent comfort and long-term value.</p>
-        <div className="actions">
-          <a className="btn primary" href={`mailto:${contact.email}?subject=Belterra%20Residences%20Price%20List`}>Request Price List <ArrowRight size={18}/></a>
-          <a className="btn secondary" href={`https://wa.me/${contact.whatsapp}`} target="_blank">WhatsApp Sales Team</a>
-        </div>
-      </motion.div>
-      <div className="factBar">
-        {facts.map(([big, small]) => <div key={big}><strong>{big}</strong><span>{small}</span></div>)}
-      </div>
-    </section>
-  )
+function Masterplan(){
+ return <section id="masterplan" className="section">
+  <div className="sectionTitle"><p className="kicker">Masterplan</p><h2>Real 70-unit urbanization layout.</h2></div>
+  <div className="featuredPlan"><img src={masterplanreal} alt="Masterplan"/></div>
+ </section>
 }
 
-function Project() {
-  return (
-    <section id="project" className="section split">
-      <div>
-        <p className="kicker">Real project. Clean presentation.</p>
-        <h2>Belterra is presented as a calm, secure and smart family community.</h2>
-      </div>
-      <div className="copy">
-        <p>The website now avoids tiny low-resolution logo lockups and replaces the technical plan screenshots with clean brand-aligned schematic redraws.</p>
-        <p>The original architectural drawings remain included as source references, but the public-facing layout is cleaner, calmer and easier for buyers to understand.</p>
-      </div>
-    </section>
-  )
+function Homes(){
+ return <section id="homes" className="section">
+  <div className="sectionTitle"><p className="kicker">House layouts</p><h2>Actual typology sheets, presented cleanly.</h2></div>
+  <div className="layoutGrid">{layouts.slice(1).map((l)=><article key={l.title}><div className="planImg"><img src={l.src} alt={l.title}/></div><h3>{l.title}</h3></article>)}</div>
+ </section>
 }
 
-function MiniMasterplan() {
-  const allUnits = blocks.flatMap(b => b.units)
-  return (
-    <div className="redrawnPlan">
-      <div className="north">N</div>
-      <div className="road top">Internal residential street</div>
-      <div className="planRows">
-        <div className="upper">
-          {blocks.slice(4).map(block => (
-            <div className="block" key={block.name}>
-              <label>{block.name}</label>
-              <div className="plots">{block.units.map(u => <span key={u}>{u}</span>)}</div>
-            </div>
-          ))}
-        </div>
-        <div className="centralRoad">Secure internal circulation · private parking access</div>
-        <div className="lower">
-          {blocks.slice(0,4).reverse().map(block => (
-            <div className="block" key={block.name}>
-              <label>{block.name}</label>
-              <div className="plots">{block.units.map(u => <span key={u}>{u}</span>)}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="poolBadge"><Waves size={18}/> Community pool / social zone</div>
-      <div className="securityBadge"><LockKeyhole size={18}/> Controlled access</div>
-    </div>
-  )
+function Gallery(){
+ return <section id="gallery" className="section dark">
+  <div className="sectionTitle"><p className="kicker">Visual library</p><h2>Approved project renders.</h2></div>
+  <div className="renderGrid">{renders.map((r,i)=><figure className={i<2?'wide':''} key={r.title}><img src={r.src} alt={r.title}/><figcaption>{r.title}</figcaption></figure>)}</div>
+ </section>
 }
 
-function Masterplan() {
-  return (
-    <section id="masterplan" className="section">
-      <div className="sectionHead">
-        <p className="kicker">Brand-redrawn masterplan</p>
-        <h2>70 numbered townhouses arranged across blocks B1–B8.</h2>
-      </div>
-      <MiniMasterplan />
-      <div className="planNotes">
-        <div><strong>B1–B8</strong><span>Urbanization blocks</span></div>
-        <div><strong>01–70</strong><span>Numbered plots</span></div>
-        <div><strong>Pool</strong><span>Community zone</span></div>
-        <div><strong>Access</strong><span>Security control</span></div>
-      </div>
-    </section>
-  )
+function Contact(){
+ return <section id="contact" className="contact">
+  <img src={logo} alt="Belterra logo"/>
+  <h2>Request the private price list</h2>
+  <p>Availability, layouts and phase-release information are shared directly by the Belterra sales team.</p>
+  <div className="contactLinks"><a href={`tel:${contact.phone.replace(/\s/g,'')}`}><Phone size={18}/>{contact.phone}</a><a href={`mailto:${contact.email}`}><Mail size={18}/>{contact.email}</a><a><MapPin size={18}/>{contact.location}</a></div>
+ </section>
 }
 
-function HouseDiagram({ type }) {
-  return (
-    <div className={`houseDiagram ${type.tone}`}>
-      <div className="plotLabel">{type.count} unit{type.count === 1 ? '' : 's'}</div>
-      <div className="floor ground">
-        <span className="parking">Parking</span>
-        <span className="living">Living</span>
-        <span className="garden">Garden</span>
-        {type.type !== 'Type 6' && <span className="pool">Pool option</span>}
-      </div>
-      <div className="floor first">
-        <span className="bed">Bedroom</span>
-        <span className="bath">Bath</span>
-        <span className="bed">Bedroom</span>
-      </div>
-      <div className="roof">
-        <span>Roof terrace / technical zone</span>
-      </div>
-    </div>
-  )
-}
+function App(){return <><Header/><Hero/><Project/><Masterplan/><Homes/><Gallery/><Contact/><footer>© Belterra Residences by Aventus</footer></>}
 
-function Homes() {
-  return (
-    <section id="homes" className="section">
-      <div className="sectionHead">
-        <p className="kicker">Brand-redrawn house typologies</p>
-        <h2>Buyer-friendly diagrams based on the real architectural package.</h2>
-      </div>
-      <div className="typeGrid">
-        {homeTypes.map(h => (
-          <article className="typeCard" key={h.type}>
-            <div className="typeTop">
-              <strong>{h.type}</strong>
-              <span>{h.count} unit{h.count === 1 ? '' : 's'}</span>
-            </div>
-            <HouseDiagram type={h} />
-            <div className="typeMeta">
-              <p>{h.label}</p>
-              <small>{h.bedrooms} bedrooms · {h.key}</small>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function Lifestyle() {
-  const icons = [ShieldCheck, Video, Trees, Waves, Waves, Home, Car, Plug, Home, Car]
-  return (
-    <section id="lifestyle" className="dark">
-      <div className="sectionHead centered">
-        <p className="kicker">Amenities & buyer triggers</p>
-        <h2>Clear features, no overstatement.</h2>
-      </div>
-      <div className="amenityGrid">
-        {amenities.map((item, i) => {
-          const Icon = icons[i]
-          return <div className="amenity" key={item}><Icon size={20}/><span>{item}</span></div>
-        })}
-      </div>
-    </section>
-  )
-}
-
-function VisualStory() {
-  return (
-    <section className="visualStory">
-      <div className="visualCopy">
-        <p className="kicker">Approved visual system</p>
-        <h2>Premium renders carry the emotion. Redrawn plans carry the trust.</h2>
-        <p>This version keeps your best project visuals and makes the plan information look like a developer brand, not raw permit documentation.</p>
-      </div>
-      <div className="visualGrid">
-        <img src={img03} alt="Family street" />
-        <img src={img422} alt="Private pool" />
-        <img src={img08} alt="Living room" />
-        <img src={marbella1} alt="Kitchen" />
-      </div>
-    </section>
-  )
-}
-
-function Gallery() {
-  return (
-    <section id="gallery" className="section">
-      <div className="sectionHead">
-        <p className="kicker">Approved renders</p>
-        <h2>Project imagery used as the main sales layer.</h2>
-      </div>
-      <div className="gallery">
-        {renders.map((r, i) => (
-          <figure className={i === 0 || i === 3 ? 'wide' : ''} key={r.title}>
-            <img src={r.src} alt={r.title} />
-            <figcaption>{r.title}</figcaption>
-          </figure>
-        ))}
-      </div>
-      <details className="sourceDetails">
-        <summary><Maximize2 size={16}/> View original architectural source screenshots</summary>
-        <div className="gallery plans">
-          {sourcePlans.map((r, i) => (
-            <figure className={i === 0 ? 'wide' : ''} key={r.title}>
-              <img src={r.src} alt={r.title} />
-              <figcaption>{r.title}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </details>
-    </section>
-  )
-}
-
-function Contact() {
-  return (
-    <section id="contact" className="contact">
-      <BrandMark />
-      <h2>Request the private price list</h2>
-      <p>Availability, unit recommendations and phase release information are shared directly by the Belterra sales team.</p>
-      <div className="contactLinks">
-        <a href={`tel:${contact.phone.replace(/\s/g,'')}`}><Phone size={18}/>{contact.phone}</a>
-        <a href={`mailto:${contact.email}`}><Mail size={18}/>{contact.email}</a>
-        <a href={`https://wa.me/${contact.whatsapp}`} target="_blank"><ArrowRight size={18}/>WhatsApp Enquiry</a>
-      </div>
-      <div className="location"><MapPin size={18}/>{contact.location}</div>
-    </section>
-  )
-}
-
-function App() {
-  return (
-    <>
-      <Nav />
-      <Hero />
-      <Project />
-      <Masterplan />
-      <Homes />
-      <Lifestyle />
-      <VisualStory />
-      <Gallery />
-      <Contact />
-      <footer>© Belterra Residences by Aventus · Secure Community Living | Intelligent Comfort | Long-Term Value</footer>
-    </>
-  )
-}
-
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById('root')).render(<App/>)
