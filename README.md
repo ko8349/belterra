@@ -1,54 +1,35 @@
-# Belterra Residences v3 Masterpiece
+# Belterra Residences — Approved Web Final
 
-Production-ready React/Vite website for **Belterra Residences by Aventus** using the approved branding and embedded image assets.
+GitHub-ready React/Vite website using the approved Belterra logo, approved renders, and the real urbanization/house layout screenshots supplied in this conversation.
 
-## Includes
-
+## Included
 - Approved Belterra logo
-- Embedded hero visual
-- Premium landing page
-- Mobile responsive design
-- CTA buttons for email and WhatsApp
-- SEO meta tags
-- Structured content file
-- Vercel/GitHub-ready setup
+- Approved project renders in `src/assets/renders`
+- Real architectural layouts in `src/assets/layouts`
+- Masterplan / 70-unit plot map section
+- Home typology section using actual typology labels/counts from the provided layout legend
+- Gallery for renders and real layouts
+- Lead CTAs: email and WhatsApp
+- Responsive design
 
-## Quick start
-
+## Run locally
 ```bash
 npm install
 npm run dev
 ```
 
 ## Build
-
 ```bash
 npm run build
 ```
 
 ## Deploy on Vercel
-
 1. Upload this folder to GitHub.
-2. Import the repository in Vercel.
-3. Use:
-   - Framework: Vite
-   - Build command: npm run build
-   - Output directory: dist
+2. Import repository into Vercel.
+3. Framework: Vite
+4. Build command: `npm run build`
+5. Output directory: `dist`
 
-## GoDaddy domain
-
-After deployment on Vercel, add your domain in Vercel and copy the DNS records into GoDaddy.
-
-## Current contact data
-
-- Phone: +34 613 191 470
-- Email: hello@belterraresidences.com
-- Location: La Cala de Mijas, Costa del Sol
-
-## Important
-
-This v3 package includes the visual assets currently available in this chat:
-- Approved Belterra logo
-- Landing page hero visual
-
-For the final public launch, replace/add real supplier renders in `src/assets/` and update imports in `src/main.jsx`.
+## Contact
++34 613 191 470  
+hello@belterraresidences.com
