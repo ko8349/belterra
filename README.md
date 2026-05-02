@@ -1,18 +1,23 @@
-# Belterra V7 Pixel-Perfect Premium Website
+# Belterra Residences — Final GitHub Ready Website V6
 
-This version is built to match the provided premium mockup direction as closely as possible in code.
+This is the final production-ready React/Vite website package for **Belterra Residences by Aventus**.
 
-## What changed
+## Included
 
-- Single premium masterplan-first landing page.
-- Large Belterra logo lockup at top.
-- Exact typology-map image used as the main map base.
-- Feature strip across the top like the mockup.
-- Right-side typology legend and location benefits panel.
-- “Choose Your Home Collection” section with 8 compact premium cards.
-- No roof terrace wording.
-- CTA section matching the mockup style.
-- GitHub/Vercel ready.
+- Approved Belterra logo
+- Approved project renders
+- Real urbanization typology map
+- Real architectural typology sheets
+- Premium masterplan section
+- Premium home typology cards
+- Lead capture CTAs
+- WhatsApp and email links
+- Responsive layout
+- Vercel/GitHub-ready setup
+
+## No invented commercial data
+
+No fake prices are included. Add the approved price list only after final approval.
 
 ## Run locally
 
@@ -27,9 +32,34 @@ npm run dev
 npm run build
 ```
 
-## Deploy
+## Deploy to Vercel
 
-Use Vercel:
-- Framework: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+1. Create a GitHub repository.
+2. Upload all files from this folder.
+3. Go to Vercel.
+4. Import the GitHub repository.
+5. Use:
+   - Framework: Vite
+   - Build command: `npm run build`
+   - Output directory: `dist`
+
+## Current contact details
+
+- Phone: +34 613 191 470
+- WhatsApp: +34 613 191 470
+- Email: hello@belterraresidences.com
+- Location: La Cala de Mijas, Mijas Costa, Costa del Sol
+
+
+## V6 correction
+
+- The masterplan section now uses the exact supplied urbanization plan and typology map images.
+- Maps are displayed full-width with `object-fit: contain`, no cropping, no recreated diagram.
+- Typology plan previews are also shown as contained real sheets, not cropped.
+
+
+## V8 update
+
+- Restored the full previous multi-section website.
+- Integrated the premium mockup-style masterplan into the existing Masterplan section.
+- Kept all other pages/sections: Project, Homes, Lifestyle, Gallery, Contact.
