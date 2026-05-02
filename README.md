@@ -1,15 +1,24 @@
-# BELTERRA Website
+# Belterra Residences Website — GitHub Ready
 
-GitHub-ready React/Vite website for **BELTERRA Residences by Aventus**.
+Production-ready React/Vite landing website for **Belterra Residences by Aventus**, using the approved logo and the supplied Belterra/Mira Segundo visual library.
 
-## Local setup
+## Included
+
+- Approved Belterra logo
+- Supplied exterior/interior renders embedded in `/src/assets`
+- Premium landing page
+- Full gallery section
+- Lead CTAs: email + WhatsApp
+- Responsive mobile layout
+- SEO meta tags
+- Ready for GitHub + Vercel
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
-
-Open the local URL shown in the terminal.
 
 ## Build
 
@@ -17,77 +26,21 @@ Open the local URL shown in the terminal.
 npm run build
 ```
 
-The production files will be created in:
+## Deploy on Vercel
 
-```bash
-dist/
-```
-
-## Deploy to Vercel
-
-1. Create a GitHub repository.
-2. Upload this project folder to GitHub.
-3. Go to Vercel and select **Add New Project**.
-4. Import the GitHub repository.
-5. Use these settings:
-   - Framework: **Vite**
+1. Upload this folder to GitHub.
+2. Import the repository into Vercel.
+3. Use:
+   - Framework: Vite
    - Build command: `npm run build`
    - Output directory: `dist`
-6. Deploy.
-7. In Vercel, go to **Settings → Domains** and add your domain.
 
-## Connect GoDaddy domain to Vercel
+## Current contact details
 
-In GoDaddy DNS settings, add the records Vercel gives you.
-
-Typical setup:
-
-- `A` record for `@` pointing to Vercel IP
-- `CNAME` record for `www` pointing to Vercel target
-
-Use the exact DNS values shown in your Vercel domain setup screen.
-
-## Deploy directly on GoDaddy hosting
-
-GoDaddy standard hosting usually serves static files.
-
-1. Run:
-
-```bash
-npm run build
-```
-
-2. Upload everything inside the `dist/` folder to your GoDaddy `public_html` folder.
-3. Make sure `index.html` is at the root of `public_html`.
-
-## Images
-
-All images are stored in:
-
-```bash
-public/images/
-```
-
-The site expects the following filenames:
-
-- `10.jpg`
-- `08.jpg`
-- `16.jpg`
-- `14.jpg`
-- `45.jpg`
-- `42_2.jpg`
-- `Marbella1.jpg`
-- `Marbella2.jpg`
-- `Marbella3.jpg`
-- `Marbella4.jpg`
-
-You can replace images with newer renders as long as the filenames stay the same.
+- Phone: +34 613 191 470
+- Email: hello@belterraresidences.com
+- Location: La Cala de Mijas, Costa del Sol
 
 ## Notes
 
-The contact form is visual only. To make it live, connect it to:
-- HubSpot
-- Mailchimp
-- Make/Zapier webhook
-- Vercel serverless function
-- WhatsApp link
+The site uses only supplied visuals from this conversation plus the approved Belterra logo.
