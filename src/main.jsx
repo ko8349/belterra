@@ -105,7 +105,6 @@ function Hero(){
       <img src={img03} alt="Belterra Residences" />
       <div className="heroOverlay" />
       <motion.div className="heroContent" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.7}}>
-        <img className="heroLogo" src={logo} alt="Belterra Residences by Aventus" />
         <p className="eyebrow">La Cala de Mijas · Costa del Sol</p>
         <h1>Future-Ready Family Homes</h1>
         <p>70 contemporary townhouses built around secure community living, intelligent comfort and long-term value.</p>

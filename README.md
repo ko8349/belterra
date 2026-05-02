@@ -63,3 +63,9 @@ npm run build
 - Restored the full previous multi-section website.
 - Integrated the premium mockup-style masterplan into the existing Masterplan section.
 - Kept all other pages/sections: Project, Homes, Lifestyle, Gallery, Contact.
+
+
+## V9 update
+
+- Removed the large duplicate logo block from the hero section.
+- Kept the navigation/header logo intact.
